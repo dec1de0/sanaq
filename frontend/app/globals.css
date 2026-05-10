@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Default skin (White + Light Green) ─── */
+:root {
+  --skin-cell:        #ffffff;
+  --skin-given:       #edf7ed;
+  --skin-selected:    #b5d9b5;
+  --skin-row-col:     #cce8cc;
+  --skin-box:         #e8f5e8;
+  --skin-same:        #9ecf9e;
+  --skin-border:      #1a2a6c;
+  --skin-number:      #1a2a6c;
+  --skin-user-ok:     #1e5c1e;
+  --skin-note:        rgba(30,92,30,0.55);
+}
+
+/* ─── Warm Paper ─── */
+[data-skin="warm_paper"] {
+  --skin-cell:        #fdf6e3;
+  --skin-given:       #f5e6c8;
+  --skin-selected:    #e8d09a;
+  --skin-row-col:     #eeddb5;
+  --skin-box:         #f5eccd;
+  --skin-same:        #d4b870;
+  --skin-border:      #8b6914;
+  --skin-number:      #5c3d11;
+  --skin-user-ok:     #5c7a1e;
+  --skin-note:        rgba(92,61,17,0.5);
+}
+
+/* ─── Dark Mode skin ─── */
+[data-skin="dark"] {
+  --skin-cell:        #1e2d3e;
+  --skin-given:       #162030;
+  --skin-selected:    #2d5016;
+  --skin-row-col:     #1e3b22;
+  --skin-box:         #182a1e;
+  --skin-same:        #2a6030;
+  --skin-border:      #3a8a4a;
+  --skin-number:      #d0e8d0;
+  --skin-user-ok:     #66bb6a;
+  --skin-note:        rgba(180,230,180,0.5);
+}
+
+/* ─── Neon (Pro) ─── */
+[data-skin="neon"] {
+  --skin-cell:        #0d0d1a;
+  --skin-given:       #0a0a14;
+  --skin-selected:    #003322;
+  --skin-row-col:     #001a11;
+  --skin-box:         #060d0a;
+  --skin-same:        #005533;
+  --skin-border:      #00ffcc;
+  --skin-number:      #00ffcc;
+  --skin-user-ok:     #00ff88;
+  --skin-note:        rgba(0,255,200,0.4);
+}
+
+/* ─── Minimalist (Pro) ─── */
+[data-skin="minimalist"] {
+  --skin-cell:        #ffffff;
+  --skin-given:       #f5f5f5;
+  --skin-selected:    #e0e0e0;
+  --skin-row-col:     #ebebeb;
+  --skin-box:         #f5f5f5;
+  --skin-same:        #d0d0d0;
+  --skin-border:      #999999;
+  --skin-number:      #222222;
+  --skin-user-ok:     #2e7d32;
+  --skin-note:        rgba(0,0,0,0.35);
+}
+
+/* ─── Kazakh Pattern (Pro) ─── */
+[data-skin="kazakh"] {
+  --skin-cell:        #1a2a6c;
+  --skin-given:       #111d4a;
+  --skin-selected:    #6b3a00;
+  --skin-row-col:     #3a2200;
+  --skin-box:         #152060;
+  --skin-same:        #9a5200;
+  --skin-border:      #e8b84b;
+  --skin-number:      #e8b84b;
+  --skin-user-ok:     #ffd700;
+  --skin-note:        rgba(232,184,75,0.45);
+}
+
+/* ─── Sunset (Pro) ─── */
+[data-skin="sunset"] {
+  --skin-cell:        #fff5ee;
+  --skin-given:       #ffe8d6;
+  --skin-selected:    #f4a86b;
+  --skin-row-col:     #f8c89a;
+  --skin-box:         #fde8d4;
+  --skin-same:        #e8874a;
+  --skin-border:      #c0440a;
+  --skin-number:      #8b2500;
+  --skin-user-ok:     #1a6b1a;
+  --skin-note:        rgba(139,37,0,0.45);
+}
+
+/* ─── Global dark mode (body-level) ─── */
+.dark body,
+body.dark {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.dark .bg-white { background-color: #1f2937 !important; }
+.dark .bg-app-bg { background-color: #111827 !important; }
+.dark .border-app-border { border-color: #374151 !important; }
+.dark .text-navy { color: #93c5fd !important; }
+.dark .bg-accent-light { background-color: #1f2937 !important; }
+.dark header, .dark nav { background-color: rgba(17,24,39,0.95) !important; border-color: #374151 !important; }
+
+html, body { height: 100%; }
+body { background-color: #f4fbf4; color: #1a2a6c; }
+* { box-sizing: border-box; }
+
+/* ─── Keyframes ──────────────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce-in {
+  0%   { opacity: 0; transform: scale(0.5); }
+  62%  { transform: scale(1.06); }
+  80%  { transform: scale(0.97); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes num-drop {
+  0%   { opacity: 0; transform: scale(1.55) translateY(-3px); }
+  55%  { transform: scale(0.88); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes shake-err {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  18%      { transform: translateX(-5px) rotate(-2deg); }
+  36%      { transform: translateX(5px)  rotate(2deg); }
+  54%      { transform: translateX(-4px) rotate(-1deg); }
+  72%      { transform: translateX(4px)  rotate(1deg); }
+  88%      { transform: translateX(-1px); }
+}
+@keyframes float-drift {
+  0%, 100% { transform: translateY(0)     rotate(var(--r, 0deg)); }
+  33%      { transform: translateY(-12px) rotate(var(--r, 0deg)); }
+  66%      { transform: translateY(-6px)  rotate(var(--r, 0deg)); }
+}
+@keyframes glow-gold {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(251,191,36,0.55); }
+  50%      { box-shadow: 0 0 0 10px rgba(251,191,36,0); }
+}
+@keyframes shimmer-slide {
+  0%   { background-position: -250% center; }
+  100% { background-position: 250% center; }
+}
+@keyframes streak-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  70%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes hint-appear {
+  from { opacity: 0; transform: translateY(-10px) scaleY(0.9); }
+  to   { opacity: 1; transform: translateY(0)     scaleY(1); }
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────── */
+.anim-fade-in-up  { animation: fade-in-up  0.55s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-fade-in     { animation: fade-in     0.40s ease both; }
+.anim-scale-in    { animation: scale-in    0.42s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-slide-up    { animation: slide-up    0.48s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-bounce-in   { animation: bounce-in   0.55s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-num-drop    { animation: num-drop    0.28s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-shake       { animation: shake-err   0.40s ease both; }
+.anim-float       { animation: float-drift var(--dur,28s) ease-in-out infinite; }
+.anim-glow-gold   { animation: glow-gold   2.4s ease-in-out infinite; }
+.anim-slide-right { animation: slide-in-right 0.45s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-hint        { animation: hint-appear  0.30s cubic-bezier(0.22,1,0.36,1) both; }
+.anim-streak-pop  { animation: streak-pop  0.55s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* Pro shimmer on pricing card */
+.shimmer-gold {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(251,191,36,0.25) 50%,
+    transparent 70%
+  );
+  background-size: 250% auto;
+  animation: shimmer-slide 3s linear infinite;
+}
+
+/* Smooth transition helpers */
+.transition-smooth { transition: all 0.25s cubic-bezier(0.22,1,0.36,1); }
+.hover-lift { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease; }
+.hover-lift:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,42,108,0.12); }
